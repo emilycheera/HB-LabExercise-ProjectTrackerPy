@@ -98,7 +98,7 @@ def assign_grade(github, title, grade):
             VALUES (:github, :title, :grade)
     """
 
-    db_cursor = db.session.execute(QUERY, {'github': github,
+    db.session.execute(QUERY, {'github': github,
                                            'title': title,
                                            'grade': grade})
     db.session.commit()
